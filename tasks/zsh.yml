@@ -17,7 +17,7 @@
 - name: Install package from AUR using a Pacman compatible AUR helper
   shell: echo y | LANG=C yay -S --sudoloop --noprovides --answerdiff None --answerclean None --noconfirm zsh-theme-powerlevel10k-git
   become: true
-  become_user: lwi
+  become_user: "{{ user }}"
   tags: [ 'install', 'base', 'zsh', 'yay' ]
 
 - name: Install zsh-syntax-highlighting

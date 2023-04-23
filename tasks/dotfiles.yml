@@ -3,15 +3,20 @@
   tags: [ 'install', 'dotfiles', 'stow' ]
 
 - name: Clone .dotfiles repo
+  become: true
+  become_user: "{{ user }}"
   git:
     repo: https://github.com/LeoWie93/.dotfiles.git
-    dest: "~/.dotfiles"
+    dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
     recursive: yes
     update: yes
+    accept_hostkey: yes
     version: main
   tags: [ 'install', 'dotfiles', 'stow' ]
 
 - name: Stow dotfiles
-  shell: cd $HOME/.dotfiles && stow .dotfiles
+  become: true
+  become_user: "{{ user }}"
+  shell: cd $HOME/.dotfiles && ./install.sh
   tags: [ 'install', 'dotfiles', 'stow' ]
 

@@ -1,6 +1,8 @@
 ---
 - name: Setup current host
   hosts: localhost
+  vars:
+    user: "{{ user }}"
   # vars:
   #   tags:
   #     zsh:
