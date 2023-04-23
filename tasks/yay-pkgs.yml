@@ -1,0 +1,11 @@
+- name: Install yay base packages
+  shell : echo y | LANG=C yay -S --sudoloop --noprovides --answerdiff None --answerclean None --noconfirm "{{ item }}"
+  tags: [ 'install' , 'base', 'yay' ]
+  become: true
+  become_user: lwi
+  with_items:
+    - davfs2
+    - displaylink 
+    - evdi
+
+

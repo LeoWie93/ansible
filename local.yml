@@ -1,0 +1,28 @@
+---
+- name: Setup current host
+  hosts: localhost
+  # vars:
+  #   tags:
+  #     zsh:
+  #       - install
+  #       - base
+  #       - zsh
+  connection: local
+  gather_facts: true
+  become: true
+  pre_tasks:
+    - name: Update System
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
+
+    - name: Make sure yay is present (fails if not available in repo)
+      pacman: name=yay
+
+  tasks:
+    - include: tasks/base-pkgs.yml
+    # maybe just create a yaypkg.txt
+    #- include: tasks/yay-pkgs.yml
+    - include: tasks/zsh.yml
+    - include: tasks/dotfiles.yml
+

@@ -1,0 +1,17 @@
+- name: Install stow
+  pacman: name=stow
+  tags: [ 'install', 'dotfiles', 'stow' ]
+
+- name: Clone .dotfiles repo
+  git:
+    repo: https://github.com/LeoWie93/.dotfiles.git
+    dest: "~/.dotfiles"
+    recursive: yes
+    update: yes
+    version: main
+  tags: [ 'install', 'dotfiles', 'stow' ]
+
+- name: Stow dotfiles
+  shell: cd $HOME/.dotfiles && stow .dotfiles
+  tags: [ 'install', 'dotfiles', 'stow' ]
+
