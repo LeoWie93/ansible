@@ -1,0 +1,12 @@
+- name: Install nvim
+  pacman: 
+    name: nvim
+    state: present
+  tags: [ 'install', 'nvim' ]
+
+- name: Install packer from AUR
+  shell: echo y | LANG=C yay -S --sudoloop --noprovides --answerdiff None --answerclean None --noconfirm nvim-packer-git
+  become: true
+  become_user: "{{ user }}"
+  tags: [ 'install', 'nvim', 'yay' ]
+

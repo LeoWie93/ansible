@@ -3,12 +3,6 @@
   hosts: localhost
   vars:
     user: "{{ user }}"
-  # vars:
-  #   tags:
-  #     zsh:
-  #       - install
-  #       - base
-  #       - zsh
   connection: local
   gather_facts: true
   become: true
@@ -26,5 +20,6 @@
     # maybe just create a yaypkg.txt
     #- include: tasks/yay-pkgs.yml
     - include: tasks/zsh.yml
+    - include: tasks/nvim/nvim.yml
     - include: tasks/dotfiles.yml
 

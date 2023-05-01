@@ -8,6 +8,7 @@
     - go
     - fd
     - fzf
+    - tmux
     - htop
     - blueberry
     - bluez-utils
