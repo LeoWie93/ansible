@@ -1,6 +1,6 @@
 - name: Install nvim
   pacman: 
-    name: nvim
+    name: neovim
     state: present
   tags: [ 'install', 'nvim' ]
 
