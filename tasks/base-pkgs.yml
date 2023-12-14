@@ -1,20 +1,33 @@
 - name: Install base packages
-  pacman: 
+  pacman:
     name: "{{ item }}"
     state: present
   tags: [ 'install', 'base' ]
   with_items:
     # maybe put this in subtasks. More files ~ but better organisation
-    - go
-    - fd
-    - fzf
+    # term
+    - alacritty
+    - wezterm
     - tmux
-    - htop
+    - waybar
+    # wayland
+    - wlroots
+    - wofi
+    - wf-recorder
+    - xdg-desktop-portal
+    - xdg-desktop-portal-wlr
     - blueberry
     - bluez-utils
     - cups
     - cups-filters
     - cups-pdf
+    - dunst
+    - fd
+    - fzf
+    - go
+    - grim
+    - slurp
+    - swappy
     - ghostscript
     - gutenprint
     - gvfs
@@ -23,19 +36,20 @@
     - gvfs-mtp
     - gvfs-nfs
     - gvfs-smb
+    - htop
     - keepassxc
     - noto-fonts
     - opendesktop-fonts
-    - ttf-bitstream-vera                                                                                                      
-    - ttf-dejavu                                                                                                              
-    - ttf-liberation                                                                                                          
-    - ttf-opensans
-    - adobe-source-han-sans-cn-fonts                                                                                          
-    - adobe-source-han-sans-jp-fonts                                                                                          
-    - adobe-source-han-sans-kr-fonts
     - obsidian
     - rofi
+    - light
     - solaar
-
-
-
+    - starship
+    # fonts
+    - adobe-source-han-sans-cn-fonts
+    - adobe-source-han-sans-jp-fonts
+    - adobe-source-han-sans-kr-fonts
+    - ttf-bitstream-vera
+    - ttf-dejavu
+    - ttf-liberation
+    - ttf-opensans

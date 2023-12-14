@@ -15,10 +15,10 @@
     - node
 
 
-- name: install node 18
+- name: install node 20
   become: true
   become_user: "{{ user }}"
-  shell: nvm install 18
+  shell: nvm install 20
   tags:
     - install
     - node

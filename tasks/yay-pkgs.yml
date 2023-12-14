@@ -4,8 +4,16 @@
   become: true
   become_user: lwi
   with_items:
+    - bruno-bin
+    - beekeeper-studio-bin
     - davfs2
     - displaylink 
     - evdi
+    - nerd-fonts-git
+    - xremap-wlroots-bin
+    - webcord
+    - wlogout
+    - wlprop
+
 
 

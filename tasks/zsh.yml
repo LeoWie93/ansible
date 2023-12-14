@@ -6,7 +6,7 @@
   shell: chsh -s /usr/sbin/zsh
   tags: [ 'install', 'base', 'zsh' ]
 
-- name: Install zsh-autosuggestions 
+- name: Install zsh-autosuggestions
   pacman: name=zsh-autosuggestions
   tags: [ 'install', 'base', 'zsh' ]
 
@@ -14,13 +14,6 @@
   pacman: name=zsh-history-substring-search
   tags: [ 'install', 'base', 'zsh' ]
 
-- name: Install package from AUR using a Pacman compatible AUR helper
-  shell: echo y | LANG=C yay -S --sudoloop --noprovides --answerdiff None --answerclean None --noconfirm zsh-theme-powerlevel10k-git
-  become: true
-  become_user: "{{ user }}"
-  tags: [ 'install', 'base', 'zsh', 'yay' ]
-
 - name: Install zsh-syntax-highlighting
   pacman: name=zsh-syntax-highlighting
   tags: [ 'install', 'base', 'zsh' ]
-
